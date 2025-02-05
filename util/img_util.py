@@ -40,7 +40,7 @@ class ImageDataLoader:
 
         # get a sorted list of all files in the directory
         # fill in with your own code below
-        self.img_list = [i for i in os.listdir(self.directory) if i[4:8] >= "0786" and i[4:8] <= "0886"]
+        self.file_list = [os.path.join(self.directory, i) for i in os.listdir(self.directory) if i[4:8] >= "0786" and i[4:8] <= "0886"]
 
         if not self.file_list:
             raise ValueError("No image files found in the directory.")
@@ -62,7 +62,7 @@ class ImageDataLoader:
     
     def __next__(self):
         if self.index < self.num_batches:
-            file_path = self.img_list[self.index]
+            file_path = self.file_list[self.index]
             self.index += 1
             return file_path
         else:
