@@ -1,5 +1,5 @@
 import random
-
+import os
 import cv2
 
 
@@ -40,6 +40,7 @@ class ImageDataLoader:
 
         # get a sorted list of all files in the directory
         # fill in with your own code below
+        self.img_list = [i for i in os.listdir(self.directory) if i[4:8] >= "0786" and i[4:8] <= "0886"]
 
         if not self.file_list:
             raise ValueError("No image files found in the directory.")
@@ -56,4 +57,15 @@ class ImageDataLoader:
 
     def __iter__(self):
         # fill in with your own code below
-        pass
+        self.index = 0
+        return self
+    
+    def __next__(self):
+        if self.index < self.num_batches:
+            file_path = self.img_list[self.index]
+            self.index += 1
+            return file_path
+        else:
+            raise StopIteration
+            
+        
