@@ -1,43 +1,41 @@
-# Projects in Data Science (2025)
+Project Report: Automated Hair Removal in Image Processing
 
-**INTRODUCTION**
+1. Introduction
 This project aims to automate hair removal from images using image processing techniques such as blackhat filtering and thresholding to enhance image clarity.
 
-**COMMUNICATION**
-We mainly communicated via messenger and in-person discussions during exercides classes
+2. Communication
+We primarily communicated via Messenger and in-person discussions during exercise classes.
 
-**FAMALIARIZING WITH GITHUB**
-Our first objetive was to get familiar with github since most of us have not really used it. Thankfully Bartosz knew a lot about, so he helped us to get accustomed to the basic commands. Oliver created the repository, invited to gorup members in. During our project, we encountered some merge conflicts but Bartosz managet to solve it at some point.
+3. Familiarizing with GitHub
+Since most team members were not experienced with GitHub, we began by learning its basic commands. Bartosz guided the team, and Oliver created the repository and invited the group members. During the project, we encountered merge conflicts, which Bartosz managed to resolve.
 
-**LABALING**
-We first analized what we will have to do and what tasks we had. Than we looked at the data and agreed on the 100 images that we were going to label. We than did our labeling separately to different csv files. We did not use any software for that, we did it manualy on our laptops. Than Matej collected all the reults abd pushed them in one results.csv file. 
+4. Labeling
+We analyzed our tasks and selected 100 images for labeling. Each member labeled images separately in individual CSV files without using specialized software. Matej then consolidated all results into a single results.csv file.
 
-**CODE**
-We used a little bit different approach than the uploaded code. Using a little ChatGPT and discussion with other students, Oliver implemented the code with added iter and next methods. We filled all the remaining required code involving the filepath name handling and the for loop for the process. 
+5. Code Implementation
+We used a slightly different approach than the original uploaded code. Oliver, with input from ChatGPT and peer discussions, implemented the code with added iter and next methods. We completed the required filepath handling and loop implementation for processing.
 
-**METHODOLOGY**
-File Handling: 
-Images are loaded using the ImageDataLoader class, filtering files within a specific range.
-Image Processing:
+6. Methodology
+
+File Handling: Images are loaded using the ImageDataLoader class, filtering files within a specific range.
+
+Image Processing: 
 readImageFile converts images to RGB and grayscale.
 
-Hair Removal Process: 
-The removeHair function performs morphological filtering to detect hair-like structures. It applies:
+Hair Removal Process:
+
 Blackhat Filtering: Highlights hair contours using morphological transformations.
+
 Thresholding: Enhances hair structures for better segmentation.
+
 Inpainting: Uses OpenCV’s cv2.inpaint function to remove detected hair regions and reconstruct the image.
 
 Saving Processed Images: Output images are saved in the ./result directory using saveImageFile.
-Results and Conclusion:
-The implemented pipeline efficiently removes hair artifacts, enhancing images for further analysis. Future improvements could involve adaptive thresholding and further implementations of the theory we have learned durning classes, like changing the parameters and types of brushes fo the remove hair function that we practised in week 4.
 
-INTERESTING THINGS WE ENCOUNTERED:
-Our model was mostly doing its job but there are still a lot od room for improvements. Unfortunatelly since we did not have the ground-thuth images for our inputs, we could not estimate the dice-scores of our model. We could only look at the results and mesure by ourselves.
+7. Interesting Findings
+Our model was mostly effective, but there is still room for improvement. Unfortunately, since we did not have ground-truth images for our inputs, we could not estimate the Dice scores of our model. We could only evaluate results visually.
 
-**SUMMARY**
-We carefully looked what we have done and Oliver wrote the outline for the summary containing the main points of our work.
+8. Results and Conclusion The implemented pipeline efficiently removes hair artifacts, enhancing images for further analysis. Future improvements could involve adaptive thresholding and further refinement based on theoretical learnings, such as modifying parameters and brush types for better hair removal from week 4's exercises.
 
-
-
-
-
+9. Summary
+After reviewing our work, Oliver outlined the key points for the summary, ensuring a clear presentation of our findings and methodologies.
