@@ -35,7 +35,7 @@ INTERESTING THINGS WE ENCOUNTERED:
 Our model was mostly doing its job but there are still a lot od room for improvements. Unfortunatelly since we did not have the ground-thuth images for our inputs, we could not estimate the dice-scores of our model. We could only look at the results and mesure by ourselves.
 
 **SUMMARY**
-We carefully looked what we have done and Oliver the outline for the summary containing the main points of our work.
+We carefully looked what we have done and Oliver wrote the outline for the summary containing the main points of our work.
 
 
 
