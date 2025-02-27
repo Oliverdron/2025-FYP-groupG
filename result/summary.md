@@ -36,7 +36,7 @@ We used a slightly different approach than the original uploaded code. Oliver, w
 
 7. Methodology
 
-File Handling: <br /> Images are loaded using the ImageDataLoader class, filtering files by loading "data-student.csv", finding file names assigned to our specific group and only using said specific files. In the main file there exists a 'static variable' called group_ID. Changing it will influace which group's file the program will process. Interestingly, if only one file assigned to a group exists in the data folder, the program will process it anyway. The program will throw an error only if all of the files assigned to the group (based on data-student.cs) are missing from the data folder.
+File Handling: <br /> Images are loaded using the ImageDataLoader class, filtering files by loading "data-student.csv", finding file names assigned to our specific group and only using said specific files. In the main file there exists a 'static variable' called group_ID (which equals to 'G'). Changing it will influace which group's file the program will process. Interestingly, if only one file assigned to a group exists in the data folder, the program will process it anyway. The program will throw an error only if all of the files assigned to the group (based on data-student.cs) are missing from the data folder.
 
 Image Processing: <br />
 readImageFile converts images to RGB and grayscale.
@@ -61,4 +61,6 @@ Our model was mostly effective, but there is still room for improvement. Unfortu
 The implemented pipeline efficiently removes hair artifacts, enhancing images for further analysis. Future improvements could involve adaptive thresholding and further refinement based on theoretical learnings, such as modifying parameters and brush types for better hair removal from week 4's exercises.
 
 10. Summary
-After reviewing our work, Oliver outlined the key points for the summary and Nicolai helped by adding and editing some points, ensuring a clear presentation of our findings and methodologies. Matej helped with the formatting and proofreading.
+After reviewing our work, Oliver outlined the key points for the summary and Nicolai helped by adding and editing some points, ensuring a clear presentation of our findings and methodologies. Matej helped with the formatting and proofreading. Bartosz helped with with cleaning up the code and the file structure.
+
+To run the program the image dataset should be moved to the data directory. It should contain at least one image from the choosen group to run, otherwise it will throw an error.
