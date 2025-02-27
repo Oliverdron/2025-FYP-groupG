@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 data
-processed-images
+*.processed-images
 *.png
 # C extensions
 *.so
