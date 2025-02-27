@@ -1,7 +1,10 @@
 import random
 import os
 import cv2
+import pandas as pd
 
+#Change to get the files of different group
+ID = 'G'
 
 def readImageFile(file_path):
     # read image as an 8-bit array
@@ -39,11 +42,14 @@ class ImageDataLoader:
         self.transform = transform
 
         # get a sorted list of all files in the directory
-        # fill in with your own code below
-        self.file_list = [os.path.join(self.directory, i) for i in os.listdir(self.directory) if i[4:8] >= "0786" and i[4:8] <= "0886"]
-
+        # use the csv file to check which files are assigned to the group G
+        files_to_read = pd.read_csv(self.directory +"-student.csv")
+        files_to_read = files_to_read[files_to_read['Group_ID']==ID]['File_ID']
+        self.file_list = pd.array([os.path.join(self.directory, i) for i in files_to_read])
+        mask_for_missing_files = [os.path.isfile(f) for f in self.file_list]
+        self.file_list = self.file_list[mask_for_missing_files]
         if not self.file_list:
-            raise ValueError("No image files found in the directory.")
+            raise ValueError("No image files found in the directory. Check the data folder")
 
         # shuffle file list if required
         if self.shuffle:
