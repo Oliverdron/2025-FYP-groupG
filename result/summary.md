@@ -36,7 +36,7 @@ We used a slightly different approach than the original uploaded code. Oliver, w
 
 7. Methodology
 
-File Handling: <br /> Images are loaded using the ImageDataLoader class, filtering files by loading "data-student.csv", finding file names assigned to our specific group and only using said specific files.
+File Handling: <br /> Images are loaded using the ImageDataLoader class, filtering files by loading "data-student.csv", finding file names assigned to our specific group and only using said specific files. In the main file there exists a 'static variable' called group_ID. Changing it will influace which group's file the program will process. Interestingly, if only one file assigned to a group exists in the data folder, the program will process it anyway. The program will throw an error only if all of the files assigned to the group (based on data-student.cs) are missing from the data folder.
 
 Image Processing: <br />
 readImageFile converts images to RGB and grayscale.
@@ -51,7 +51,8 @@ Inpainting: <br />
 Uses OpenCV’s cv2.inpaint function to remove detected hair regions and reconstruct the image.
 
 Saving Processed Images: <br />
-Output images are saved in the ./result directory using saveImageFile.
+Output images are saved in the ./result/processed-images directory using saveImageFile.
+
 
 8. Interesting Findings <br />
 Our model was mostly effective, but there is still room for improvement. Unfortunately, since we did not have ground-truth images for our inputs, we could not estimate the Dice scores of our model. We could only evaluate results visually.

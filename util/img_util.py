@@ -4,7 +4,6 @@ import cv2
 import pandas as pd
 
 #Change to get the files of different group
-ID = 'G'
 
 def readImageFile(file_path):
     # read image as an 8-bit array
@@ -36,15 +35,16 @@ def saveImageFile(img_rgb, file_path):
 
 
 class ImageDataLoader:
-    def __init__(self, directory, shuffle=False, transform=None):
+    def __init__(self, directory, shuffle=False, transform=None, ID='G'):
         self.directory = directory
         self.shuffle = shuffle
         self.transform = transform
+        self.ID = ID
 
         # get a sorted list of all files in the directory
         # use the csv file to check which files are assigned to the group G
         files_to_read = pd.read_csv(self.directory +"-student.csv")
-        files_to_read = files_to_read[files_to_read['Group_ID']==ID]['File_ID']
+        files_to_read = files_to_read[files_to_read['Group_ID']==self.ID]['File_ID']
         self.file_list = pd.array([os.path.join(self.directory, i) for i in files_to_read])
         mask_for_missing_files = [os.path.isfile(f) for f in self.file_list]
         self.file_list = self.file_list[mask_for_missing_files]

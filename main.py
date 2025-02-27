@@ -5,13 +5,16 @@ import matplotlib.pyplot as plt
 from util.img_util import readImageFile, saveImageFile, ImageDataLoader
 from util.inpaint_util import removeHair
 
+#Change to load a different groups images based on the csv file.
+group_ID = 'G'
+
 #filling this for the program
 script_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir, "data")
 
-image_loader = ImageDataLoader(directory=file_path)
+image_loader = ImageDataLoader(directory=file_path, ID=group_ID)
 
-save_dir = './result'
+save_dir = './result/processed-images/'
 
 counter = 0
 
